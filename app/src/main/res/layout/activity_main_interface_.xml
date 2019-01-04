@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main_interface_Activity">
+
+    <TextView
+        android:id="@+id/tv_interface_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#777"
+        android:gravity="center"
+        android:text="通讯录"
+        android:textColor="#ddd"
+        android:textSize="40sp" />
+
+    <ListView
+        android:id="@+id/tv_interface_listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_interface_title"
+        android:layout_alignLeft="@+id/tv_interface_title">
+
+    </ListView>
+
+    <ImageView
+        android:id="@+id/tv_interface_add"
+        android:layout_width="57dp"
+        android:layout_height="53dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:cropToPadding="false"
+        android:onClick="@+id/tv_interface_add"
+        android:scaleType="centerCrop"
+        android:src="@android:drawable/ic_menu_add" />
+
+</RelativeLayout>

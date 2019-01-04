@@ -20,6 +20,8 @@
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@anim/set" />
+
+        <activity android:name=".main_interface_Activity"></activity>
     </application>
 
 </manifest>
