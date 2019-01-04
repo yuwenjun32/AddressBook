@@ -7,12 +7,14 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
 public class AddRelationActivity extends AppCompatActivity {
     private EditText addName,addTel;
     private Spinner addGroup;
+    private Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,13 @@ public class AddRelationActivity extends AppCompatActivity {
         addName=(EditText)findViewById(R.id.addName);
         addTel=(EditText)findViewById(R.id.addTel);
         addGroup=(Spinner)findViewById(R.id.addGroup);
+
+        String s[]={"家人","同学","朋友","同事","领导"};
+        spinner =(Spinner) findViewById(R.id.addGroup);
+
+        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,android.R.id.text1,s);
+        spinner.setAdapter(adapter);
+
     }
     public void save(View view){
         final ContentValues values=new ContentValues();

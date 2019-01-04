@@ -32,7 +32,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:cropToPadding="false"
-        android:onClick="@+id/tv_interface_add"
+        android:onClick="add"
         android:scaleType="centerCrop"
         android:src="@android:drawable/ic_menu_add" />
 

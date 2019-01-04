@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ActionBar actionBar=getSupportActionBar();
         if (actionBar!=null){
-            actionBar.hide();;
+            actionBar.hide();
         }
         setContentView(R.layout.activity_main);
         iv_main_welcome=(ImageView)findViewById(R.id.iv_main_welcome);
