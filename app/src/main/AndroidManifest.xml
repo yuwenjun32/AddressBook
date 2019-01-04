@@ -21,7 +21,8 @@
             android:name="com.google.android.actions"
             android:resource="@anim/set" />
 
-        <activity android:name=".main_interface_Activity"></activity>
+        <activity android:name=".main_interface_Activity" />
+        <activity android:name=".AddRelationActivity"></activity>
     </application>
 
 </manifest>
