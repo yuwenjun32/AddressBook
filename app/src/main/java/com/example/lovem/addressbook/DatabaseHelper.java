@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.TextView;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DB_NAME="MyRelation.db";
@@ -18,6 +19,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     DatabaseHelper(Context context){
         super(context,DB_NAME,null,2);
     }
+
+
 
     public void insert(ContentValues values){
         SQLiteDatabase db=getWritableDatabase();

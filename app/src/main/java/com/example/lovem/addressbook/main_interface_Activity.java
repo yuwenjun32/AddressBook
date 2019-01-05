@@ -3,6 +3,8 @@ package com.example.lovem.addressbook;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
@@ -14,9 +16,11 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 
 public class main_interface_Activity extends AppCompatActivity {
     private ListView listView;
+    private TextView name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +33,15 @@ public class main_interface_Activity extends AppCompatActivity {
         }
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         listView = (ListView) findViewById(R.id.tv_interface_listView);
-        getRelationFromDB();
+               getRelationFromDB();
+
     }
 
     private void getRelationFromDB() {
         final DatabaseHelper dbHelper = new DatabaseHelper(this);
         final Cursor cursor = dbHelper.query();
-        final String[] from = {"_id", "name", "tel", "groupName"};
-        int[] to = {R.id._id, R.id.name, R.id.tel, R.id.group};
+        final String[] from = { "name", "tel", "groupName"};
+        int[] to = { R.id.name, R.id.tel, R.id.group};
         SimpleCursorAdapter scadapter = new SimpleCursorAdapter(getApplicationContext(), R.layout.relationlist, cursor, from, to);
         listView.setAdapter(scadapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -49,8 +54,8 @@ public class main_interface_Activity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         dbHelper.del((int)temp);
                         Cursor cursor=dbHelper.query();
-                        String[] from={"_id","name","tel","groupName"};
-                        int[] to={R.id._id,R.id.name,R.id.tel,R.id.group};
+                        String[] from={"name","tel","groupName"};
+                        int[] to={R.id.name,R.id.tel,R.id.group};
                         SimpleCursorAdapter scadapter=new SimpleCursorAdapter(getApplicationContext(),R.layout.relationlist,cursor,from,to);
                         main_interface_Activity.this.listView.setAdapter(scadapter);
                     }
